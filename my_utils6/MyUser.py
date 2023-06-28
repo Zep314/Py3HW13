@@ -16,3 +16,6 @@ class MyUser:
 
     def __str__(self):
         return f'Имя: {self.name}, ID:{self.id}, Уровень доступа:{self.access_level}'
+
+    def __eq__(self, other):
+        return self.name == other.name and self.id == other.id
