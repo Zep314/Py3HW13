@@ -1,0 +1,14 @@
+{
+    "1": {
+        "name": "Ivan",
+        "access_level": 3
+    },
+    "2": {
+        "name": "Peter",
+        "access_level": 2
+    },
+    "3": {
+        "name": "Anna",
+        "access_level": 1
+    }
+}

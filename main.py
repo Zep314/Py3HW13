@@ -2,6 +2,7 @@
 # Урок 13. Исключения
 
 import my_utils6 as mu6
+import json
 
 if __name__ == '__main__':
     print('--== Тестирование числовой функции ==--')
@@ -15,4 +16,11 @@ if __name__ == '__main__':
                }
     print(mu6.get_like_dict(my_dict, 'key1', 'default1'))
     print(mu6.get_like_dict(my_dict, 32, 'default_32'))
-    print(mu6.get_like_dict(my_dict, 43, 'default_43'))
+    print(mu6.get_like_dict(my_dict, 43, 'default_43'))  # Тут отработает исключение
+
+    my_user = mu6.MyUser('Иван', 1 , 3)
+    print(my_user)
+
+    u = mu6.my_read_json('users_base.json')
+
+    print(u)

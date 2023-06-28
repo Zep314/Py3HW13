@@ -16,9 +16,10 @@ def my_get_num() -> float:
     while True:
         try:
             ret = float(input('Введите целое число: '))
-            break
         except ValueError:
             print('Ошибка! Введено не целое число!')
+        else:
+            break
     return ret
 
 # Задание №2
@@ -34,4 +35,8 @@ def get_like_dict(my_dict :dict, my_key, default):
     :param default: Значение, которое возвращаем, если запрашиваемого ключа не находим
     :return:
     """
-    pass
+    try:
+        return my_dict[my_key]
+    except KeyError:
+        return default
+
