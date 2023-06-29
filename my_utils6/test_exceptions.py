@@ -7,27 +7,28 @@
 # пользователя до тех пор, пока он не введёт целое или
 # вещественное число.
 # - Обрабатывайте не числовые данные как исключения.
+
+
 def my_get_num() -> float:
     """
     Вводим число с проверкой
     :return:
     """
-    ret = 0
     while True:
         try:
-            ret = float(input('Введите целое число: '))
+            ret = int(input('Введите целое число: '))
         except ValueError:
             print('Ошибка! Введено не целое число!')
         else:
-            break
-    return ret
+            return ret
+
 
 # Задание №2
 # - Создайте функцию аналог get для словаря.
 # - Помимо самого словаря функция принимает ключ и значение по умолчанию.
 # - При обращении к несуществующему ключу функция должна возвращать дефолтное значение.
 # - Реализуйте работу через обработку исключений.
-def get_like_dict(my_dict :dict, my_key, default):
+def get_like_dict(my_dict: dict, my_key, default):
     """
     Возвращаем значение словаря по ключу
     :param my_dict: словарь в котором ищем значение по ключу
@@ -39,4 +40,3 @@ def get_like_dict(my_dict :dict, my_key, default):
         return my_dict[my_key]
     except KeyError:
         return default
-

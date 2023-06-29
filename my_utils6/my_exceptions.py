@@ -3,6 +3,10 @@
 #  - ошибка уровня,
 #  - ошибка доступа.
 
+# Задание №6
+# - Доработайте классы исключения так, чтобы они выдали подробную информацию об ошибках.
+# - Передавайте необходимые данные из основного кода проекта.
+
 class MyBaseException(BaseException):
     """
     Базовый класс для работы с моими персональными исключениями
@@ -15,9 +19,9 @@ class MyBaseException(BaseException):
 
     def __str__(self):
         if self.message:
-            return f'MyBaseException, {self.message}'
+            return f'{self.__class__.__name__}, {self.message}'
         else:
-            return 'MyBaseException has been raised!'
+            return '{self.__class__.__name__} has been raised!'
 
 
 class MyLevelException(MyBaseException):
@@ -31,6 +35,14 @@ class MyLevelException(MyBaseException):
 class MyAccessException(MyBaseException):
     """
     Мой класс для обработки исключений ошибок по доступу
+    """
+    def __init__(self, *args):
+        super().__init__(*args)
+
+
+class MyValueError(MyBaseException):
+    """
+    Мой класс для обработки исключений ошибок по значению переменных
     """
     def __init__(self, *args):
         super().__init__(*args)
